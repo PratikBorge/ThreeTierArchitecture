@@ -17,7 +17,7 @@ spec:
         spec: 
             containers: 
                 - name: tomcat
-                  image: pratikborge/backend:latest
+                  image: pratikborge/backend:latest //your dockerhub image
                   ports:
                    - containerPort: 8080
                      protocol: TCP
