@@ -17,7 +17,7 @@ spec:
         spec: 
             containers: 
                 - name: httpd
-                  image: pratikborge/frontend:latest
+                  image: pratikborge/frontend:latest // your dockerhub image
                   ports:
                    - containerPort: 80
                      protocol: TCP
