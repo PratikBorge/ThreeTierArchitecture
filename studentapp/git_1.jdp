@@ -1,0 +1,30 @@
+pipeline {
+    agent any 
+    stages {
+        stage('Git-lab Pull') { 
+            steps {
+                git 'https://github.com/swapnibrad/test.git' 
+            }
+        }
+        stage('Test_1') { 
+            steps {
+                sh 'ls'
+            }
+        }
+        stage('Test_2') { 
+            steps {
+                sh 'ls -a'
+            }
+        }
+        stage('Test_3') { 
+            steps {
+                echo 'is this'
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                echo 'done' 
+            }
+        }
+    }
+}

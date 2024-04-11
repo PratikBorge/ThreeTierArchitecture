@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata: 
+  name: deploy 
+  labels: 
+     app: tomapp
+spec:
+    replicas: 2
+    selector: 
+        matchLabels: 
+            app: tomapp
+    template: 
+        metadata: 
+            name: deploy
+            labels: 
+               app: tomapp
+        spec: 
+            containers: 
+                - name: tomcat
+                  image: pratikborge/backend:latest
+                  ports:
+                   - containerPort: 8080
+                     protocol: TCP

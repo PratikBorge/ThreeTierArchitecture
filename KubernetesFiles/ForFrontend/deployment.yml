@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata: 
+  name: deployfront 
+  labels: 
+     app: httpdapp
+spec:
+    replicas: 2
+    selector: 
+        matchLabels: 
+            app: httpdapp
+    template: 
+        metadata: 
+            name: deployfront
+            labels:
+               app: httpdapp
+        spec: 
+            containers: 
+                - name: httpd
+                  image: pratikborge/frontend:latest
+                  ports:
+                   - containerPort: 80
+                     protocol: TCP
