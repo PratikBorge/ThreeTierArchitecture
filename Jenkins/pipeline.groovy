@@ -16,7 +16,7 @@ pipeline {
                     sudo mv ./target/*.war ./target/student.war
                     sudo snap install aws-cli --classic
                     sudo aws s3 cp ./target/student.war <s3bucket_url> --acl public-read
-                    '''
+                    ''' //add role of S3 full access to node instance
                 }
             }
         }
