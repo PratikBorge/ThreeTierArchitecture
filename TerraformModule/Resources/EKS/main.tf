@@ -3,13 +3,13 @@ resource "aws_eks_cluster" "eks_cluster" {
     vpc_config {
       subnet_ids = var.public_subnet_ids 
   }
-    role_arn = "arn:aws:iam::471112957025:role/eks1" //use role created for eks cluster
+    role_arn = "arn:aws:iam::267307198563:role/eks1" //use role created for eks cluster
 }
 
 resource "aws_eks_node_group" "eks_node_group" {
     cluster_name = aws_eks_cluster.eks_cluster.name
     subnet_ids = var.public_subnet_ids
-    node_role_arn = "arn:aws:iam::471112957025:role/eks2" //use role created for eks cluster nodegroup
+    node_role_arn = "arn:aws:iam::267307198563:role/aws-service-role/eks-nodegroup.amazonaws.com/AWSServiceRoleForAmazonEKSNodegroup" //use role created for eks cluster nodegroup
     scaling_config {
        desired_size = 1
        max_size     = 2
