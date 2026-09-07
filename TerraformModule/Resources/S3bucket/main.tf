@@ -32,5 +32,5 @@ resource "aws_s3_bucket_acl" "acl" {
 resource "aws_s3_object" "artifactforthreeprat" {
   bucket = aws_s3_bucket.artifactforthreeprat.bucket 
   key    = "mysql-connector.jar"
-  source = "/mnt/c/Users/pratik/Desktop/Webapps/mysql-connector.jar"
+  source = "/home/rocky/ThreeTierArchitecture/studentapp/mysql-connector.jar"
 }
